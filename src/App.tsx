@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Box, Button } from '@mui/material';
 import './App.css';
+import theme from './theme';
+import { ThemeProvider } from '@mui/material/styles';
 
-function App() {
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          backgroundImage: `url('../public/images/background.jpg')`, // This path points to public/images/background.jpg
+          backgroundSize: 'cover', // Ensure the image covers the entire container
+          backgroundPosition: 'center', // Center the background image
+          height: '100vh',
+          width: '100vw',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Button color='primary'>Green Button</Button>
+        <Button color='secondary'>Orange Button</Button>
+      </Box>
+    </ThemeProvider>
   );
-}
-
-export default App;
+};
