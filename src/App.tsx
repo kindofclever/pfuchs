@@ -1,26 +1,44 @@
 import React from 'react';
-import { Box, Button } from '@mui/material';
-import './App.css';
-import theme from './theme';
+import { motion } from 'framer-motion';
+import { Box } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+
+import Theme from './Theme';
+import { buttonVariants } from './variants/variants';
+import CustomButton from './components/CustomButton';
+import LandingBanner from './components/LandingBanner';
+
+const imageURL =
+  'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4000&q=80';
 
 export const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={Theme}>
       <Box
         sx={{
-          backgroundImage: `url('../public/images/background.jpg')`, // This path points to public/images/background.jpg
-          backgroundSize: 'cover', // Ensure the image covers the entire container
-          backgroundPosition: 'center', // Center the background image
-          height: '100vh',
-          width: '100vw',
+          overflow: 'hidden',
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${imageURL})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
           display: 'flex',
-          justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center',
+          justifyContent: 'center',
+          gap: '20px',
         }}
       >
-        <Button color='primary'>Green Button</Button>
-        <Button color='secondary'>Orange Button</Button>
+        <LandingBanner />
+        <motion.div
+          initial='hidden'
+          animate='visible'
+          variants={buttonVariants}
+        >
+          <CustomButton btnType={'action'}>Come In</CustomButton>
+        </motion.div>
       </Box>
     </ThemeProvider>
   );
