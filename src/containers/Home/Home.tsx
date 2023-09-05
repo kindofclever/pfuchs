@@ -1,5 +1,22 @@
-import React from 'react';
+import { Typography } from '@mui/material';
 
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Typography variant='h4'>
+        helfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout ikldfufgiuiofgui kjdsfkhdjkfh
+        jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout ikldfufgiuiofgui
+        kjdsfkhdjkfh jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout
+        ikldfufgiuiofgui kjdsfkhdjkfh
+        jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout ikldfufgiuiofgui
+        kjdsfkhdjkfh jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout
+        ikldfufgiuiofgui kjdsfkhdjkfh
+        jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout ikldfufgiuiofgui
+        kjdsfkhdjkfh jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout
+        ikldfufgiuiofgui kjdsfkhdjkfh
+        jkhdsfjhakldfhhelfgjhfjlkghhdsjkfhjkhjkfgsdhaklhiuriout ikldfufgiuiofgui
+        kjdsfkhdjkfh jkhdsfjhakldfho
+      </Typography>
+    </>
+  );
 };

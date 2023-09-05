@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Typography, TypographyProps } from '@mui/material';
+import { FC } from 'react';
 
 interface AnimatedTypographyProps extends TypographyProps {
   variants: any;
@@ -7,7 +8,7 @@ interface AnimatedTypographyProps extends TypographyProps {
   animate?: string;
 }
 
-const AnimatedTypography: React.FC<AnimatedTypographyProps> = ({
+const AnimatedTypography: FC<AnimatedTypographyProps> = ({
   variants,
   initial,
   animate,

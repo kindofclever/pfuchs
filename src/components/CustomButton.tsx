@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import MuiButton, { ButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
@@ -110,7 +110,7 @@ interface CustomButtonProps extends Omit<ButtonProps, 'variant'> {
   btnType: ButtonType;
 }
 
-export const CustomButton: React.FC<CustomButtonProps> = ({
+export const CustomButton: FC<CustomButtonProps> = ({
   btnType,
   children,
   ...other

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { buttonVariants } from '../../variants/variants';
 const imageURL =
   'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4000&q=80';
 
-const LandingPage: React.FC = () => {
+const LandingPage: FC = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {

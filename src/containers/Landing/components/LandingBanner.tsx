@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import { isMobile } from 'react-device-detect';
 import { Box } from '@mui/material';
 
 import { h1Variants, h2Variants } from '../../../variants/variants';
 import AnimatedTypography from '../../../components/AnimatedTypography';
 
-const LandingBanner = () => {
+const LandingBanner: FC = () => {
   return (
     <>
       <Box
