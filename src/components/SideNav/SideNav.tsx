@@ -1,7 +1,8 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { Box, Drawer, IconButton, List, useTheme } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import NavigationListItem from './components/NavigationListItem';
+import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
 
 type SideNavProps = {
   isOpen: boolean;
@@ -12,11 +13,13 @@ type SideNavProps = {
 const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
   const theme = useTheme();
 
+  const [bgColor, setBgColor] = useState(getRandomThemeColor(theme));
+
   const drawerStyles = {
     width: '240px',
     flexShrink: 0,
     '& .MuiPaper-root': {
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: bgColor,
     },
   };
 
@@ -52,6 +55,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
             title={item.title}
             redirectTo={item.redirectTo}
             onClick={() => {
+              setBgColor(getRandomThemeColor(theme));
               onListItemClick();
               onClose();
             }}
