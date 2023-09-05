@@ -1,5 +1,5 @@
-import { h1Variants, h2Variants } from '../variants/variants';
-import AnimatedTypography from './AnimatedTypography';
+import { h1Variants, h2Variants } from '../../variants/variants';
+import AnimatedTypography from '../../components/AnimatedTypography';
 
 const LandingBanner = () => {
   return (
