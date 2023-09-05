@@ -56,13 +56,42 @@ const themeOptions: ThemeOptions = {
       fontSize: '3.7rem',
       fontWeight: 900,
       color: 'white',
-      fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     },
+
     h2: {
       fontSize: '2rem',
       fontWeight: 700,
       color: 'white',
-      fontFamily: 'Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+
+    h3: {
+      fontSize: '1.7rem',
+      fontWeight: 700,
+      color: 'white',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+
+    h4: {
+      fontSize: '1.4rem',
+      fontWeight: 700,
+      color: 'white',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+
+    h5: {
+      fontSize: '1.2rem',
+      fontWeight: 700,
+      color: 'white',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 600,
+      color: 'white',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     },
     button: {
       fontFamily: 'inherit',
