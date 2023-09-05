@@ -2,7 +2,11 @@ import { FC, useState } from 'react';
 import { Grid, Button } from '@mui/material';
 import React from 'react';
 
-// Components for each floor
+type ElevatorState = {
+  currentFloor: number;
+  direction: 'up' | 'down' | 'stationary';
+};
+
 const Floor: FC<{
   floorNumber: number;
   callElevator: (floor: number) => void;
@@ -17,25 +21,68 @@ const Floor: FC<{
   );
 };
 
-// Components for each elevator
-const Elevator: FC<{ elevatorNumber: number; currentFloor: number }> = ({
-  elevatorNumber,
+const Elevator: FC<{ currentFloor: number; elevatorNumber: number }> = ({
   currentFloor,
+  elevatorNumber,
 }) => {
-  return <div>{currentFloor === elevatorNumber ? 'E' : ''}</div>;
+  return (
+    <div>
+      Elevator {elevatorNumber}: {currentFloor}
+    </div>
+  );
+};
+
+const distributeElevatorsAcrossFloors = (
+  numOfElevators: number,
+  numOfFloors: number
+): ElevatorState[] => {
+  const interval = Math.ceil(numOfFloors / numOfElevators);
+  return Array.from({ length: numOfElevators }, (_, index) => {
+    return {
+      currentFloor: Math.min(index * interval + 1, numOfFloors),
+      direction: 'stationary',
+    } as ElevatorState;
+  });
 };
 
 const ElevatorSimulation: FC = () => {
   const numOfFloors = 20;
   const numOfElevators = 5;
-  const [elevatorPositions, setElevatorPositions] = useState<Array<number>>(
-    Array(numOfElevators).fill(1)
+
+  const [elevators, setElevators] = useState<ElevatorState[]>(
+    distributeElevatorsAcrossFloors(numOfElevators, numOfFloors)
   );
 
+  const getClosestElevator = (floor: number): number => {
+    let minDistance = numOfFloors + 1;
+    let bestElevatorIndex = -1;
+
+    elevators.forEach((elevator, index) => {
+      const distance = Math.abs(elevator.currentFloor - floor);
+      if (
+        distance < minDistance &&
+        (elevator.direction === 'stationary' ||
+          (elevator.direction === 'up' && elevator.currentFloor < floor) ||
+          (elevator.direction === 'down' && elevator.currentFloor > floor))
+      ) {
+        bestElevatorIndex = index;
+        minDistance = distance;
+      }
+    });
+
+    return bestElevatorIndex;
+  };
+
   const callElevator = (floor: number) => {
-    const newPositions = [...elevatorPositions];
-    newPositions[0] = floor; // This simply makes the first elevator go to the called floor. More advanced logic would determine the best elevator to send.
-    setElevatorPositions(newPositions);
+    const closestElevatorIndex = getClosestElevator(floor);
+    const newElevators = [...elevators];
+    newElevators[closestElevatorIndex] = {
+      ...newElevators[closestElevatorIndex],
+      direction:
+        floor > newElevators[closestElevatorIndex].currentFloor ? 'up' : 'down',
+      currentFloor: floor, // for the sake of this example, we'll immediately set the current floor
+    };
+    setElevators(newElevators);
   };
 
   return (
@@ -79,8 +126,8 @@ const ElevatorSimulation: FC = () => {
                 xs={2}
               >
                 <Elevator
-                  elevatorNumber={i + 1}
-                  currentFloor={elevatorPositions[j]}
+                  elevatorNumber={j + 1}
+                  currentFloor={elevators[j].currentFloor}
                 />
               </Grid>
             ))}
