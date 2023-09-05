@@ -6,9 +6,10 @@ import NavigationListItem from './components/NavigationListItem';
 type SideNavProps = {
   isOpen: boolean;
   onClose: () => void;
+  onListItemClick: () => void;
 };
 
-const SideNav: FC<SideNavProps> = ({ isOpen, onClose }) => {
+const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
   const theme = useTheme();
 
   const drawerStyles = {
@@ -50,7 +51,10 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose }) => {
             key={item.redirectTo}
             title={item.title}
             redirectTo={item.redirectTo}
-            onClick={onClose}
+            onClick={() => {
+              onListItemClick();
+              onClose();
+            }}
           />
         ))}
       </List>
