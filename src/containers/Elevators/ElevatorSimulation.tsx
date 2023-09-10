@@ -80,7 +80,7 @@ const ElevatorSimulation: FC = () => {
       ...newElevators[closestElevatorIndex],
       direction:
         floor > newElevators[closestElevatorIndex].currentFloor ? 'up' : 'down',
-      currentFloor: floor, // for the sake of this example, we'll immediately set the current floor
+      currentFloor: floor, 
     };
     setElevators(newElevators);
   };
