@@ -25,15 +25,13 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   return (
     <Box
       display='flex'
-      height='100vh'
       flexDirection='column'
       bgcolor={bgColor}
       paddingX={5}
-    >
+      minHeight='100vh'>
       <AppBar
         position='static'
-        sx={{ boxShadow: 'none', backgroundColor: bgColor }}
-      >
+        sx={{ boxShadow: 'none', backgroundColor: bgColor }}>
         <Toolbar>
           <Box flexGrow={1}></Box>
           {!isDrawerOpen && (
@@ -43,13 +41,11 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
           )}
         </Toolbar>
       </AppBar>
-
       <SideNav
         isOpen={isDrawerOpen}
         onClose={toggleDrawer}
         onListItemClick={handleListItemClick}
       />
-
       <Box flexGrow={1}>{children}</Box>
     </Box>
   );

@@ -29,6 +29,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
     { key: 'elevators', title: 'Elevator Simulation', redirectTo: 'elevators' },
     { key: 'skills', title: 'Skills', redirectTo: 'skills' },
     { key: 'downloads', title: 'Downloads', redirectTo: 'downloads' },
+    { key: 'colours', title: 'Colours', redirectTo: 'colours' },
   ];
 
   return (
@@ -37,13 +38,11 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
       anchor='right'
       open={isOpen}
       onClose={onClose}
-      sx={drawerStyles}
-    >
+      sx={drawerStyles}>
       <Box
         display='flex'
         justifyContent='center'
-        p={1}
-      >
+        p={1}>
         <IconButton onClick={onClose}>
           <CloseIcon sx={{ color: theme.palette.common.white }} />
         </IconButton>
