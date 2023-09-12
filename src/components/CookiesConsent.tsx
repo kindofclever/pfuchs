@@ -48,7 +48,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ onConsentChange }) => {
   };
 
   return (
-    <div>
+    <>
       <Snackbar
         open={show}
         TransitionComponent={SlideTransition}
@@ -80,7 +80,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ onConsentChange }) => {
         }}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       />
-    </div>
+    </>
   );
 };
 

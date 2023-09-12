@@ -79,7 +79,7 @@ const ElevatorSimulation: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       <InitializationForm onInitialize={handleInitialization} />
       <ElevatorDisplay
         floors={floors}
@@ -87,7 +87,7 @@ const ElevatorSimulation: React.FC = () => {
         onRequestElevator={handleRequest}
       />
       <RequestElevatorForm onRequest={handleRequest} />
-    </div>
+    </>
   );
 };
 
