@@ -6,9 +6,12 @@ import {
   Avatar,
   Grid,
   Button,
+  useTheme,
 } from '@mui/material';
+import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
 
 const About: React.FC = () => {
+  const theme = useTheme();
   return (
     <Container
       component='main'
@@ -22,24 +25,17 @@ const About: React.FC = () => {
           alignItems: 'center',
         }}
         elevation={5}>
-        <Avatar
-          src='https://via.placeholder.com/150'
-          alt='Your Name'
-          sx={{ width: 20, height: 20, mb: 2 }}
-        />
         <Typography
           component='h1'
-          variant='h4'>
-          Your Name
+          variant='h1'
+          sx={{ color: getRandomThemeColor(theme) }}>
+          Soon you will be able to read more about me here{' '}
         </Typography>
         <Typography
           component='p'
           variant='subtitle1'
           sx={{ mt: 2 }}>
-          A passionate software developer with over X years of experience in
-          full-stack development, cloud computing, and more. I have contributed
-          to numerous projects that have impacted millions of users globally,
-          and I'm always eager to take on new challenges and grow further.
+          Under Construction
         </Typography>
 
         <Grid
@@ -52,7 +48,7 @@ const About: React.FC = () => {
               variant='contained'
               color='primary'
               href='#projects'>
-              My Projects
+              Nothing happens here
             </Button>
           </Grid>
           <Grid item>
@@ -60,12 +56,15 @@ const About: React.FC = () => {
               variant='outlined'
               color='primary'
               href='#contact'>
-              Contact Me
+              Or here
             </Button>
           </Grid>
         </Grid>
       </Paper>
     </Container>
+    // <Box sx={{ objectFit: 'contain' }}>
+    //   <UnderConstruction />
+    // </Box>
   );
 };
 

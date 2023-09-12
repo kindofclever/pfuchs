@@ -1,9 +1,11 @@
 // ElevatorSimulation.tsx
-import React, { useState } from 'react';
+import React, { useImperativeHandle, useState } from 'react';
 import axios from 'axios';
 import InitializationForm from './components/InitializationForm';
 import ElevatorDisplay from './components/ElevatorDisplay';
 import RequestElevatorForm from './components/RequestElevatorForm';
+import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
+import { Typography, useTheme } from '@mui/material';
 
 export type ElevatorType = {
   id: number;
@@ -14,6 +16,8 @@ export type ElevatorType = {
 const ElevatorSimulation: React.FC = () => {
   const [floors, setFloors] = useState<number>(0);
   const [elevators, setElevators] = useState<ElevatorType[]>([]);
+
+  const theme = useTheme();
 
   const handleInitialization = async (
     floors: number,
@@ -80,13 +84,27 @@ const ElevatorSimulation: React.FC = () => {
 
   return (
     <>
-      <InitializationForm onInitialize={handleInitialization} />
+      {/* <InitializationForm onInitialize={handleInitialization} />
       <ElevatorDisplay
         floors={floors}
         elevators={elevators}
         onRequestElevator={handleRequest}
       />
-      <RequestElevatorForm onRequest={handleRequest} />
+      <RequestElevatorForm onRequest={handleRequest} /> */}
+      <>
+        <Typography
+          component='h1'
+          variant='h1'
+          sx={{ color: getRandomThemeColor(theme) }}>
+          Soon you will be able to read more about me here{' '}
+        </Typography>
+        <Typography
+          component='p'
+          variant='subtitle1'
+          sx={{ color: getRandomThemeColor(theme), mt: 5 }}>
+          Under Construction
+        </Typography>
+      </>
     </>
   );
 };
