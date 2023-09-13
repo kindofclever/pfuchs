@@ -9,9 +9,9 @@ type ElevatorProps = {
 
 const Elevator: React.FC<ElevatorProps> = ({ elevator }) => {
   return (
-    <div>
+    <>
       Elevator {elevator.id}: {elevator.status}
-    </div>
+    </>
   );
 };
 

@@ -106,7 +106,7 @@ const buttonMap: Record<ButtonType, React.ComponentType<ButtonProps>> = {
   faded: FadedButton,
 };
 
-interface CustomButtonProps extends Omit<ButtonProps, 'variant'> {
+export interface CustomButtonProps extends Omit<ButtonProps, 'variant'> {
   btnType: ButtonType;
 }
 
