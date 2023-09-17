@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-09-17 09:49+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+
+#. js-lingui-explicit-id
+#: src/components/CookiesConsent.tsx:63
+msgid "Accept"
+msgstr "Accept"
+
+#. js-lingui-explicit-id
+#: src/components/CookiesConsent.tsx:69
+msgid "Decline"
+msgstr "Decline"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/LanguageMenu.tsx:25
+msgid "English"
+msgstr "English"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/LanguageMenu.tsx:33
+msgid "German"
+msgstr "German"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/SideNav.tsx:30
+msgid "Home"
+msgstr "Home"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/SideNav.tsx:31
+msgid "About me"
+msgstr "About me"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/SideNav.tsx:33
+msgid "Skills"
+msgstr "Skills"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/SideNav.tsx:36
+msgid "Downloads"
+msgstr "Downloads"
+
+#. js-lingui-explicit-id
+#: src/components/SideNav/SideNav.tsx:39
+msgid "Colours"
+msgstr "Colours"
+
+#. js-lingui-explicit-id
+#: src/containers/About/About.tsx:32
+msgid "Soon you will be able to read more about me here"
+msgstr "Soon you will be able to read more about me here"
+
+#. js-lingui-explicit-id
+#: src/containers/About/About.tsx:38
+msgid "Underconstruction"
+msgstr "Underconstruction"
+
+#. js-lingui-explicit-id
+#: src/containers/About/About.tsx:51
+msgid "Nothing happens here"
+msgstr "Nothing happens here"
+
+#. js-lingui-explicit-id
+#: src/containers/About/About.tsx:59
+msgid "Or here"
+msgstr "Or here"
+
+#. js-lingui-explicit-id
+#: src/containers/Landing/LandingPage.tsx:72
+msgid "Come In"
+msgstr "Come In"

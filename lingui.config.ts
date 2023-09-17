@@ -7,5 +7,4 @@ module.exports = {
       include: ['<rootDir>/src'],
     },
   ],
-  format: 'minimal',
 };
