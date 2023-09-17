@@ -1,9 +1,11 @@
-import { useState, FC, ReactNode } from 'react';
+import { useState, useEffect, FC, ReactNode } from 'react';
 import { useTheme, Box, AppBar, Toolbar, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import SideNav from '../components/SideNav/SideNav';
 import { getRandomThemeColor } from '../utils/getRandomThemeColor';
+import { useThemeContext } from '../contexts/Mode';
+import { darkTheme, lightTheme } from '../Theme';
 
 type AppLayoutProps = {
   children: ReactNode;
@@ -11,11 +13,18 @@ type AppLayoutProps = {
 
 const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const theme = useTheme();
+  const { darkMode } = useThemeContext();
+  const currentTheme = darkMode ? darkTheme : lightTheme;
+
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const [bgColor, setBgColor] = useState(getRandomThemeColor(theme));
+  const [bgColor, setBgColor] = useState(getRandomThemeColor(currentTheme));
+
+  useEffect(() => {
+    setBgColor(getRandomThemeColor(currentTheme));
+  }, [currentTheme, darkMode]);
 
   const handleListItemClick = () => {
-    setBgColor(getRandomThemeColor(theme));
+    setBgColor(getRandomThemeColor(currentTheme));
   };
 
   const toggleDrawer = () => {

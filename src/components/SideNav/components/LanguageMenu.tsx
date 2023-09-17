@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, MenuItem } from '@mui/material';
-import { useLanguage } from '../../contexts/Language';
+import { useLanguage } from '../../../contexts/Language';
 import { Trans } from '@lingui/react';
 
 interface LanguageMenuProps {

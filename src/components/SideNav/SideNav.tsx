@@ -1,10 +1,12 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Box, Drawer, IconButton, List, useTheme } from '@mui/material';
-import { Close, Translate } from '@mui/icons-material';
+import { Close, Translate, DarkMode, LightMode } from '@mui/icons-material';
 import NavigationListItem from './components/NavigationListItem';
 import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
-import LanguageMenu from './LanguageMenu';
+import LanguageMenu from './components/LanguageMenu';
 import { Trans } from '@lingui/react';
+import { useThemeContext } from '../../contexts/Mode';
+import { darkTheme, lightTheme } from '../../Theme';
 
 type SideNavProps = {
   isOpen: boolean;
@@ -14,12 +16,19 @@ type SideNavProps = {
 
 const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
   const theme = useTheme();
+  const { darkMode, toggleTheme } = useThemeContext();
+  const currentTheme = darkMode ? darkTheme : lightTheme;
 
-  const [bgColor, setBgColor] = useState(getRandomThemeColor(theme));
+  const [bgColor, setBgColor] = useState(getRandomThemeColor(currentTheme));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  useEffect(() => {
+    setBgColor(getRandomThemeColor(currentTheme));
+  }, [currentTheme, darkMode]);
 
   const drawerStyles = {
     width: '240px',
+    color: theme.palette.common.white,
     flexShrink: 0,
     '& .MuiPaper-root': {
       backgroundColor: bgColor,
@@ -60,14 +69,19 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
         alignItems='center'
         p={1}>
         <IconButton
-          onClick={onClose}
-          color='inherit'>
+          sx={{ color: theme.palette.common.white }}
+          onClick={onClose}>
           <Close />
         </IconButton>
         <IconButton
-          onClick={handleMenuOpen}
-          color='inherit'>
+          sx={{ color: theme.palette.common.white }}
+          onClick={handleMenuOpen}>
           <Translate />
+        </IconButton>
+        <IconButton
+          sx={{ color: theme.palette.common.white }}
+          onClick={toggleTheme}>
+          {darkMode ? <DarkMode /> : <LightMode />}
         </IconButton>
       </Box>
 
@@ -83,7 +97,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
             title={item.title}
             redirectTo={item.redirectTo}
             onClick={() => {
-              setBgColor(getRandomThemeColor(theme));
+              setBgColor(getRandomThemeColor(currentTheme));
               onListItemClick();
               onClose();
             }}

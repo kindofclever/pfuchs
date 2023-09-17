@@ -1,17 +1,19 @@
-import React from 'react';
-import {
-  Container,
-  Typography,
-  Paper,
-  Grid,
-  Button,
-  useTheme,
-} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Container, Typography, Paper, Grid, Button } from '@mui/material';
 import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
 import { Trans } from '@lingui/react';
+import { useThemeContext } from '../../contexts/Mode';
+import { darkTheme, lightTheme } from '../../Theme';
 
 const About: React.FC = () => {
-  const theme = useTheme();
+  const { darkMode } = useThemeContext();
+  const currentTheme = darkMode ? darkTheme : lightTheme;
+  const [color, setColor] = useState(getRandomThemeColor(currentTheme));
+
+  useEffect(() => {
+    setColor(getRandomThemeColor(currentTheme));
+  }, [currentTheme, darkMode]);
+
   return (
     <Container
       component='main'
@@ -28,7 +30,7 @@ const About: React.FC = () => {
         <Typography
           component='h1'
           variant='h1'
-          sx={{ color: getRandomThemeColor(theme) }}>
+          sx={{ color: color }}>
           <Trans id='Soon you will be able to read more about me here' />
         </Typography>
         <Typography
