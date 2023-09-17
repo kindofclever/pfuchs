@@ -1,5 +1,5 @@
-import { FC, useState } from 'react';
-import { Box, Tooltip } from '@mui/material';
+import { FC, useState, useEffect } from 'react';
+import { Box, Tooltip, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const imageURL =
 
 const LandingPage: FC = () => {
   const navigate = useNavigate();
-
+  const [isImageLoaded, setImageLoaded] = useState(false);
   const [consentStatus, setConsentStatus] =
     useState<CookieConsentStatus | null>(() => {
       const storedStatus = localStorage.getItem(
@@ -23,6 +23,12 @@ const LandingPage: FC = () => {
       ) as CookieConsentStatus | null;
       return storedStatus;
     });
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = imageURL;
+    img.onload = () => setImageLoaded(true);
+  }, []);
 
   const isButtonEnabled =
     consentStatus === CookieConsentStatus.ACCEPTED ||
@@ -37,6 +43,20 @@ const LandingPage: FC = () => {
       navigate('/home');
     }
   };
+
+  if (!isImageLoaded) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <Box

@@ -17,14 +17,10 @@ export const I18nWrapper = ({ children }: { children: ReactNode }) => {
       case 'en':
         i18n.load('en', enMessages);
         i18n.activate('en');
-        console.log('Language activated: en');
-
         break;
       case 'de':
         i18n.load('de', deMessages);
         i18n.activate('de');
-        console.log('Language activated: de');
-
         break;
       default:
         console.warn(`Unsupported language: ${language}`);

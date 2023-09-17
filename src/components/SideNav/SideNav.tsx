@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { Box, Drawer, IconButton, List, useTheme } from '@mui/material';
-import { Close, Translate, DarkMode, LightMode } from '@mui/icons-material';
+import { Close, DarkMode, LightMode, Language } from '@mui/icons-material';
 import NavigationListItem from './components/NavigationListItem';
 import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
 import LanguageMenu from './components/LanguageMenu';
@@ -77,7 +77,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
         <IconButton
           sx={{ color: theme.palette.common.white }}
           onClick={handleMenuOpen}>
-          <Translate />
+          <Language />
         </IconButton>
         <IconButton
           sx={{ color: theme.palette.common.white }}
