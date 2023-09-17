@@ -8,6 +8,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { CookieConsentStatus } from '../types/types';
+import { Trans } from '@lingui/react';
 
 const SlideTransition: React.FC<SlideProps> = (props) => {
   return (
@@ -59,13 +60,13 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ onConsentChange }) => {
               color='secondary'
               size='small'
               onClick={handleAccept}>
-              ACCEPT
+              <Trans id='Accept' />
             </Button>
             <Button
               color='primary'
               size='small'
               onClick={handleDecline}>
-              DECLINE
+              <Trans id='Decline' />
             </Button>
           </>
         }

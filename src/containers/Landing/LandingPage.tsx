@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Box, Tooltip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import CustomButton from '../../components/CustomButton';
 import CookieConsent from '../../components/CookiesConsent';
 import { buttonVariants } from '../../variants/variants';
 import { CookieConsentStatus } from '../../types/types';
+import { Trans } from '@lingui/react';
 
 const imageURL =
   'https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4000&q=80';
@@ -68,7 +69,7 @@ const LandingPage: FC = () => {
               btnType={'action'}
               onClick={handleClick}
               disabled={!isButtonEnabled}>
-              Come In
+              <Trans id='Come In' />
             </CustomButton>
           </span>
         </Tooltip>

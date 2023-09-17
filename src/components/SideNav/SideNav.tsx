@@ -1,8 +1,10 @@
 import { FC, useState } from 'react';
 import { Box, Drawer, IconButton, List, useTheme } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Close, Translate } from '@mui/icons-material';
 import NavigationListItem from './components/NavigationListItem';
 import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
+import LanguageMenu from './LanguageMenu';
+import { Trans } from '@lingui/react';
 
 type SideNavProps = {
   isOpen: boolean;
@@ -14,6 +16,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
   const theme = useTheme();
 
   const [bgColor, setBgColor] = useState(getRandomThemeColor(theme));
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const drawerStyles = {
     width: '240px',
@@ -24,13 +27,25 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
   };
 
   const navigationItems = [
-    { key: 'home', title: 'Home', redirectTo: 'home' },
-    { key: 'about', title: 'About me', redirectTo: 'about' },
-    { key: 'elevators', title: 'Elevator Simulation', redirectTo: 'elevators' },
-    { key: 'skills', title: 'Skills', redirectTo: 'skills' },
-    { key: 'downloads', title: 'Downloads', redirectTo: 'downloads' },
-    { key: 'colours', title: 'Colours', redirectTo: 'colours' },
+    { key: 'home', title: <Trans id='Home' />, redirectTo: 'home' },
+    { key: 'about', title: <Trans id='About me' />, redirectTo: 'about' },
+    // { key: 'elevators', title: 'Elevator Simulation', redirectTo: 'elevators' },
+    { key: 'skills', title: <Trans id='Skills' />, redirectTo: 'skills' },
+    {
+      key: 'downloads',
+      title: <Trans id='Downloads' />,
+      redirectTo: 'downloads',
+    },
+    { key: 'colours', title: <Trans id='Colours' />, redirectTo: 'colours' },
   ];
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Drawer
@@ -41,12 +56,26 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
       sx={drawerStyles}>
       <Box
         display='flex'
-        justifyContent='center'
+        justifyContent='space-between'
+        alignItems='center'
         p={1}>
-        <IconButton onClick={onClose}>
-          <CloseIcon sx={{ color: theme.palette.common.white }} />
+        <IconButton
+          onClick={onClose}
+          color='inherit'>
+          <Close />
+        </IconButton>
+        <IconButton
+          onClick={handleMenuOpen}
+          color='inherit'>
+          <Translate />
         </IconButton>
       </Box>
+
+      <LanguageMenu
+        anchorEl={anchorEl}
+        onClose={handleMenuClose}
+      />
+
       <List>
         {navigationItems.map((item) => (
           <NavigationListItem

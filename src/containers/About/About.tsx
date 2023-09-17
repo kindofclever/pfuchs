@@ -3,12 +3,12 @@ import {
   Container,
   Typography,
   Paper,
-  Avatar,
   Grid,
   Button,
   useTheme,
 } from '@mui/material';
 import { getRandomThemeColor } from '../../utils/getRandomThemeColor';
+import { Trans } from '@lingui/react';
 
 const About: React.FC = () => {
   const theme = useTheme();
@@ -29,13 +29,13 @@ const About: React.FC = () => {
           component='h1'
           variant='h1'
           sx={{ color: getRandomThemeColor(theme) }}>
-          Soon you will be able to read more about me here{' '}
+          <Trans id='Soon you will be able to read more about me here' />
         </Typography>
         <Typography
           component='p'
           variant='subtitle1'
           sx={{ mt: 2 }}>
-          Under Construction
+          <Trans id='Underconstruction' />
         </Typography>
 
         <Grid
@@ -48,7 +48,7 @@ const About: React.FC = () => {
               variant='contained'
               color='primary'
               href='#projects'>
-              Nothing happens here
+              <Trans id='Nothing happens here' />
             </Button>
           </Grid>
           <Grid item>
@@ -56,15 +56,12 @@ const About: React.FC = () => {
               variant='outlined'
               color='primary'
               href='#contact'>
-              Or here
+              <Trans id='Or here' />
             </Button>
           </Grid>
         </Grid>
       </Paper>
     </Container>
-    // <Box sx={{ objectFit: 'contain' }}>
-    //   <UnderConstruction />
-    // </Box>
   );
 };
 
