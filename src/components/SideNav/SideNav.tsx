@@ -65,6 +65,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
       sx={drawerStyles}>
       <Box
         display='flex'
+        flexDirection='column'
         justifyContent='space-between'
         alignItems='center'
         p={1}>
