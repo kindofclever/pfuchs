@@ -82,7 +82,7 @@ const SideNav: FC<SideNavProps> = ({ isOpen, onClose, onListItemClick }) => {
         <IconButton
           sx={{ color: theme.palette.common.white }}
           onClick={toggleTheme}>
-          {darkMode ? <DarkMode /> : <LightMode />}
+          {darkMode ? <LightMode /> : <DarkMode />}
         </IconButton>
       </Box>
 

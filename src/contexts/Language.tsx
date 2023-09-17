@@ -1,23 +1,24 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useState,
-  Dispatch,
-  SetStateAction,
-} from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
-interface LanguageContextType {
+interface LanguageContextProps {
   language: string;
-  setLanguage: Dispatch<SetStateAction<string>>;
+  setLanguage: (lang: string) => void;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(
+const LanguageContext = createContext<LanguageContextProps | undefined>(
   undefined
 );
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<string>('en');
+  const [language, setLanguageState] = useState<string>(() => {
+    return localStorage.getItem('language-preference') || 'en';
+  });
+
+  const setLanguage = (lang: string) => {
+    localStorage.setItem('language-preference', lang);
+    setLanguageState(lang);
+  };
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}

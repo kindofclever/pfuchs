@@ -15,9 +15,13 @@ import { ThemeContextProvider, useThemeContext } from './contexts/Mode';
 
 export const App: React.FC = () => {
   return (
-    <ThemeContextProvider>
-      <InnerApp />
-    </ThemeContextProvider>
+    <LanguageProvider>
+      <I18nWrapper>
+        <ThemeContextProvider>
+          <InnerApp />
+        </ThemeContextProvider>
+      </I18nWrapper>
+    </LanguageProvider>
   );
 };
 
@@ -26,43 +30,39 @@ const InnerApp: React.FC = () => {
 
   return (
     <MuiThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <LanguageProvider>
-        <I18nWrapper>
-          <BrowserRouter>
-            <Routes>
-              <Route
-                path='/'
-                element={<LandingPage />}
-              />
-              <Route
-                path='/*'
-                element={
-                  <AppLayout>
-                    <Routes>
-                      <Route
-                        path='/home'
-                        element={<Home />}
-                      />
-                      <Route
-                        path='/about'
-                        element={<About />}
-                      />
-                      <Route
-                        path='/elevators'
-                        element={<ElevatorSimulation />}
-                      />
-                      <Route
-                        path='/colours'
-                        element={<Colours />}
-                      />
-                    </Routes>
-                  </AppLayout>
-                }
-              />
-            </Routes>
-          </BrowserRouter>
-        </I18nWrapper>
-      </LanguageProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element={<LandingPage />}
+          />
+          <Route
+            path='/*'
+            element={
+              <AppLayout>
+                <Routes>
+                  <Route
+                    path='/home'
+                    element={<Home />}
+                  />
+                  <Route
+                    path='/about'
+                    element={<About />}
+                  />
+                  <Route
+                    path='/elevators'
+                    element={<ElevatorSimulation />}
+                  />
+                  <Route
+                    path='/colours'
+                    element={<Colours />}
+                  />
+                </Routes>
+              </AppLayout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </MuiThemeProvider>
   );
 };

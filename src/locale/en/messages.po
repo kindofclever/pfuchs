@@ -1,11 +1,17 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-09-17 09:49+0200\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Portfolio\n"
 "Language: en\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #. js-lingui-explicit-id
 #: src/components/CookiesConsent.tsx:63
@@ -18,59 +24,94 @@ msgid "Decline"
 msgstr "Decline"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/LanguageMenu.tsx:25
+#: src/components/SideNav/components/LanguageMenu.tsx:24
 msgid "English"
 msgstr "English"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/LanguageMenu.tsx:33
+#: src/components/SideNav/components/LanguageMenu.tsx:31
 msgid "German"
 msgstr "German"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/SideNav.tsx:30
+#: src/components/SideNav/SideNav.tsx:39
 msgid "Home"
 msgstr "Home"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/SideNav.tsx:31
+#: src/components/SideNav/SideNav.tsx:40
 msgid "About me"
 msgstr "About me"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/SideNav.tsx:33
+#: src/components/SideNav/SideNav.tsx:42
 msgid "Skills"
 msgstr "Skills"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/SideNav.tsx:36
+#: src/components/SideNav/SideNav.tsx:45
 msgid "Downloads"
 msgstr "Downloads"
 
 #. js-lingui-explicit-id
-#: src/components/SideNav/SideNav.tsx:39
+#: src/components/SideNav/SideNav.tsx:48
 msgid "Colours"
 msgstr "Colours"
 
 #. js-lingui-explicit-id
-#: src/containers/About/About.tsx:32
+#: src/containers/About/About.tsx:34
 msgid "Soon you will be able to read more about me here"
 msgstr "Soon you will be able to read more about me here"
 
 #. js-lingui-explicit-id
-#: src/containers/About/About.tsx:38
+#: src/containers/About/About.tsx:40
 msgid "Underconstruction"
 msgstr "Underconstruction"
 
 #. js-lingui-explicit-id
-#: src/containers/About/About.tsx:51
+#: src/containers/About/About.tsx:53
 msgid "Nothing happens here"
 msgstr "Nothing happens here"
 
 #. js-lingui-explicit-id
-#: src/containers/About/About.tsx:59
+#: src/containers/About/About.tsx:61
 msgid "Or here"
 msgstr "Or here"
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:8
+msgid "In the town of Azuria, nestled between rolling green hills and sparkling blue lakes, there's a legend that has been passed down from generation to generation. It's the tale of the blue dogs of Azuria."
+msgstr "In the town of Azuria, nestled between rolling green hills and sparkling blue lakes, there's a legend that has been passed down from generation to generation. It's the tale of the blue dogs of Azuria."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:12
+msgid "It began centuries ago, when the town was but a small settlement. The folks in Azuria depended on a single water source, a pristine lake which shimmered in hues of blue not seen anywhere else in the world. The lake, known as Lapis Lake, had a peculiar property. Anything that drank its water for seven days straight would take on a blue hue, as bright as the midday sky."
+msgstr "It began centuries ago, when the town was but a small settlement. The folks in Azuria depended on a single water source, a pristine lake which shimmered in hues of blue not seen anywhere else in the world. The lake, known as Lapis Lake, had a peculiar property. Anything that drank its water for seven days straight would take on a blue hue, as bright as the midday sky."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:16
+msgid "One summer, a pack of wild dogs, drawn by the scent of water, started frequenting Lapis Lake. As days turned into weeks, the once golden-brown dogs began to transform. Their fur, initially just speckled with blue, slowly changed, until the pack was entirely covered in a vivid, sapphire shade."
+msgstr "One summer, a pack of wild dogs, drawn by the scent of water, started frequenting Lapis Lake. As days turned into weeks, the once golden-brown dogs began to transform. Their fur, initially just speckled with blue, slowly changed, until the pack was entirely covered in a vivid, sapphire shade."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:20
+msgid "These blue dogs, with their radiant fur, became the guardians of Azuria. They would circle the town, playing with children, aiding farmers, and most importantly, they kept away any threats. The town's people, in turn, took care of these canines, ensuring they had enough to eat and cozy shelters to rest."
+msgstr "These blue dogs, with their radiant fur, became the guardians of Azuria. They would circle the town, playing with children, aiding farmers, and most importantly, they kept away any threats. The town's people, in turn, took care of these canines, ensuring they had enough to eat and cozy shelters to rest."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:24
+msgid "As the years rolled on, the legend grew. Travelers from distant lands would visit Azuria just to catch a glimpse of these mythical blue dogs. Many left in disbelief, thinking it was just a tale, but those fortunate enough to see them were spellbound by their beauty."
+msgstr "As the years rolled on, the legend grew. Travelers from distant lands would visit Azuria just to catch a glimpse of these mythical blue dogs. Many left in disbelief, thinking it was just a tale, but those fortunate enough to see them were spellbound by their beauty."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:28
+msgid "The blue dogs, with their gentle demeanor and striking appearance, became symbols of good luck. Artists painted their portraits, poets wrote odes in their honor, and sculptors made statues celebrating their form."
+msgstr "The blue dogs, with their gentle demeanor and striking appearance, became symbols of good luck. Artists painted their portraits, poets wrote odes in their honor, and sculptors made statues celebrating their form."
+
+#. js-lingui-explicit-id
+#: src/containers/Home/Home.tsx:32
+msgid "Today, while Azuria has grown into a bustling city, the legend of the blue dogs remains alive. Every summer, during the festival of Lapis, the town's people gather around Lapis Lake, sharing tales of the blue dogs, hoping to catch a glimpse of them, and celebrating the magic that is ever-present in their lives."
+msgstr "Today, while Azuria has grown into a bustling city, the legend of the blue dogs remains alive. Every summer, during the festival of Lapis, the town's people gather around Lapis Lake, sharing tales of the blue dogs, hoping to catch a glimpse of them, and celebrating the magic that is ever-present in their lives."
 
 #. js-lingui-explicit-id
 #: src/containers/Landing/LandingPage.tsx:72

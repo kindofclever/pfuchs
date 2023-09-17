@@ -19,7 +19,6 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ anchorEl, onClose }) => {
       <MenuItem
         onClick={() => {
           setLanguage('en');
-          console.log('english');
           onClose();
         }}>
         <Trans id='English' />
@@ -27,7 +26,6 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ anchorEl, onClose }) => {
       <MenuItem
         onClick={() => {
           setLanguage('de');
-          console.log('deutsch');
           onClose();
         }}>
         <Trans id='German' />
